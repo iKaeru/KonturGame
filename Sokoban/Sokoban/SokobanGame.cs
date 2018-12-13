@@ -1,14 +1,22 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
-namespace Sokoban.Desktop
+namespace Sokoban
 {
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
     public class SokobanGame : Game
     {
+        private Robot robot; // todo
+        
+        Texture2D robotTexture; // todo
+        Vector2 robotPosition; // todo
+        float robotSpeed; // todo
+        private float scale;// todo ???
+
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -26,7 +34,10 @@ namespace Sokoban.Desktop
         /// </summary>
         protected override void Initialize()
         {
-            // TODO: Add your initialization logic here
+            scale = 0.5f;
+            robotPosition = new Vector2(graphics.PreferredBackBufferWidth / 2,
+                graphics.PreferredBackBufferHeight / 2);
+            robotSpeed = 500f;
 
             base.Initialize();
         }
@@ -40,7 +51,10 @@ namespace Sokoban.Desktop
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            // TODO: use this.Content to load your game content here
+//            robot = new Robot(Content.Load<Texture2D>("Robot_1"), 
+//                new Vector2(graphics.PreferredBackBufferWidth / 2,
+//                    graphics.PreferredBackBufferHeight / 2));
+            robotTexture = Content.Load<Texture2D>("Robot_1");
         }
 
         /// <summary>
@@ -59,10 +73,35 @@ namespace Sokoban.Desktop
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
+            if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            // TODO: Add your update logic here
+            var kstate = Keyboard.GetState();
+
+            if (kstate.IsKeyDown(Keys.Up))
+                robotPosition.Y -= robotSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (kstate.IsKeyDown(Keys.Down))
+                robotPosition.Y += robotSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (kstate.IsKeyDown(Keys.Left))
+                robotPosition.X -= robotSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
+
+            if (kstate.IsKeyDown(Keys.Right))
+                robotPosition.X += robotSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
+
+//            if (robotPosition.X > this.GraphicsDevice.Viewport.Width)
+//                robotPosition.X = 0;
+//            if (robotPosition.X < 0)
+//                robotPosition.X = this.GraphicsDevice.Viewport.Width;
+//            if (robotPosition.Y > this.GraphicsDevice.Viewport.Height)
+//                robotPosition.Y = 0;
+//            if (robotPosition.Y < 0)
+//                robotPosition.Y = this.GraphicsDevice.Viewport.Height;
+            robotPosition.X = Math.Min(Math.Max(robotTexture.Width / 2 * scale, robotPosition.X),
+                graphics.PreferredBackBufferWidth - robotTexture.Width / 2*scale);
+            robotPosition.Y = Math.Min(Math.Max(robotTexture.Height / 2 * scale, robotPosition.Y),
+                graphics.PreferredBackBufferHeight - robotTexture.Height / 2*scale);
 
             base.Update(gameTime);
         }
@@ -75,7 +114,20 @@ namespace Sokoban.Desktop
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            // TODO: Add your drawing code here
+            spriteBatch.Begin();
+            spriteBatch.Draw(
+                robotTexture,
+                robotPosition,
+                null,
+                Color.White,
+                0f,
+                new Vector2(robotTexture.Width / 2, robotTexture.Height / 2),
+                new Vector2(scale, scale),
+                SpriteEffects.None,
+                0f
+            );
+
+            spriteBatch.End();
 
             base.Draw(gameTime);
         }

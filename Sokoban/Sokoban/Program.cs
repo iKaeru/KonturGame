@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sokoban.Desktop
+namespace Sokoban
 {
     /// <summary>
     /// The main class.
