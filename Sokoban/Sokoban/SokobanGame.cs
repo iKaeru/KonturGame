@@ -10,12 +10,8 @@ namespace Sokoban
     /// </summary>
     public class SokobanGame : Game
     {
-        private Robot robot; // todo
-        
-        Texture2D robotTexture; // todo
-        Vector2 robotPosition; // todo
-        float robotSpeed; // todo
-        private float scale;// todo ???
+        private Robot robot;
+        private float scale;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -35,10 +31,7 @@ namespace Sokoban
         protected override void Initialize()
         {
             scale = 0.5f;
-            robotPosition = new Vector2(graphics.PreferredBackBufferWidth / 2,
-                graphics.PreferredBackBufferHeight / 2);
-            robotSpeed = 500f;
-
+            
             base.Initialize();
         }
 
@@ -51,10 +44,8 @@ namespace Sokoban
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-//            robot = new Robot(Content.Load<Texture2D>("Robot_1"), 
-//                new Vector2(graphics.PreferredBackBufferWidth / 2,
-//                    graphics.PreferredBackBufferHeight / 2));
-            robotTexture = Content.Load<Texture2D>("Robot_1");
+            robot = new Robot(Content.Load<Texture2D>("Robot_1"), 
+                graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
         }
 
         /// <summary>
@@ -76,32 +67,8 @@ namespace Sokoban
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            var kstate = Keyboard.GetState();
-
-            if (kstate.IsKeyDown(Keys.Up))
-                robotPosition.Y -= robotSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (kstate.IsKeyDown(Keys.Down))
-                robotPosition.Y += robotSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (kstate.IsKeyDown(Keys.Left))
-                robotPosition.X -= robotSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (kstate.IsKeyDown(Keys.Right))
-                robotPosition.X += robotSpeed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-//            if (robotPosition.X > this.GraphicsDevice.Viewport.Width)
-//                robotPosition.X = 0;
-//            if (robotPosition.X < 0)
-//                robotPosition.X = this.GraphicsDevice.Viewport.Width;
-//            if (robotPosition.Y > this.GraphicsDevice.Viewport.Height)
-//                robotPosition.Y = 0;
-//            if (robotPosition.Y < 0)
-//                robotPosition.Y = this.GraphicsDevice.Viewport.Height;
-            robotPosition.X = Math.Min(Math.Max(robotTexture.Width / 2 * scale, robotPosition.X),
-                graphics.PreferredBackBufferWidth - robotTexture.Width / 2*scale);
-            robotPosition.Y = Math.Min(Math.Max(robotTexture.Height / 2 * scale, robotPosition.Y),
-                graphics.PreferredBackBufferHeight - robotTexture.Height / 2*scale);
+            robot.Move(gameTime);
+            robot.checkDirection(scale, graphics);
 
             base.Update(gameTime);
         }
@@ -116,12 +83,12 @@ namespace Sokoban
 
             spriteBatch.Begin();
             spriteBatch.Draw(
-                robotTexture,
-                robotPosition,
+                robot.Texture,
+                robot.Position(),
                 null,
                 Color.White,
                 0f,
-                new Vector2(robotTexture.Width / 2, robotTexture.Height / 2),
+                new Vector2(robot.Texture.Width / 2, robot.Texture.Height / 2),
                 new Vector2(scale, scale),
                 SpriteEffects.None,
                 0f
