@@ -11,7 +11,8 @@ namespace Sokoban
     public class SokobanGame : Game
     {
         private Robot robot;
-        private float scale;
+        private Background background;
+        private DrawController drawController;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -29,9 +30,7 @@ namespace Sokoban
         /// and initialize them as well.
         /// </summary>
         protected override void Initialize()
-        {
-            scale = 0.5f;
-            
+        {            
             base.Initialize();
         }
 
@@ -46,6 +45,9 @@ namespace Sokoban
 
             robot = new Robot(Content.Load<Texture2D>("Robot_1"), 
                 graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
+            background = new Background(Content.Load<Texture2D>("BackGround"), 
+                graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+            drawController = new DrawController();
         }
 
         /// <summary>
@@ -54,7 +56,7 @@ namespace Sokoban
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            Content.Unload();
         }
 
         /// <summary>
@@ -68,7 +70,7 @@ namespace Sokoban
                 Exit();
 
             robot.Move(gameTime);
-            robot.checkDirection(scale, graphics);
+            robot.checkDirection(graphics);
 
             base.Update(gameTime);
         }
@@ -81,21 +83,8 @@ namespace Sokoban
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(
-                robot.Texture,
-                robot.Position(),
-                null,
-                Color.White,
-                0f,
-                new Vector2(robot.Texture.Width / 2, robot.Texture.Height / 2),
-                new Vector2(scale, scale),
-                SpriteEffects.None,
-                0f
-            );
-
-            spriteBatch.End();
-
+            drawController.DrawScene(spriteBatch, background, robot);
+            
             base.Draw(gameTime);
         }
     }

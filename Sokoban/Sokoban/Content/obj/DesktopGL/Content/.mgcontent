@@ -4,9 +4,15 @@
   <Platform>DesktopGL</Platform>
   <Config />
   <SourceFiles>
-    <File>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/Images/Robot_Light_1.png</File>
+    <File>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/Images/Block_Box_2_Light.png</File>
+    <File>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/Images/Misc_WoodPlate_Dark.png</File>
+    <File>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/Images/Robot_Dark_1.png</File>
+    <File>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/Images/Sand_Tile.png</File>
   </SourceFiles>
   <DestFiles>
+    <File>Images/Box.png</File>
+    <File>Images/Wall.png</File>
     <File>Images/Robot_1.png</File>
+    <File>Images/BackGround.png</File>
   </DestFiles>
 </SourceFileCollection>

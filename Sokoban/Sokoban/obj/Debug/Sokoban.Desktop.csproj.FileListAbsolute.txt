@@ -39,3 +39,8 @@
 /Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/obj/Debug/Sokoban.exe
 /Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/obj/Debug/Sokoban.pdb
 /Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Robot_1.xnb
+/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/BackGround.xnb
+/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Block_Box_2_Light.xnb
+/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Misc_WoodPlate_Dark.xnb
+/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Box.xnb
+/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Wall.xnb
