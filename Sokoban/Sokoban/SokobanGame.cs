@@ -5,13 +5,24 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Sokoban
 {
+    public static class Constants
+    {
+        public const int FieldCellWidth = 104;
+        public const int FieldCellHeight = 104;
+        public const int WindowWidth = FieldCellWidth*10;
+        public const int WindowHeight = FieldCellHeight*6;
+    }
+    
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
     public class SokobanGame : Game
     {
         private Robot robot;
-        private float scale;
+        private Background background;
+        private DrawController drawController;
+        private Box box;
+        private BoxPlace boxPlace;
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -30,8 +41,10 @@ namespace Sokoban
         /// </summary>
         protected override void Initialize()
         {
-            scale = 0.5f;
-            
+            graphics.PreferredBackBufferWidth = Constants.WindowWidth;
+            graphics.PreferredBackBufferHeight = Constants.WindowHeight;
+            graphics.ApplyChanges();
+            drawController = new DrawController();
             base.Initialize();
         }
 
@@ -44,8 +57,10 @@ namespace Sokoban
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            robot = new Robot(Content.Load<Texture2D>("Robot_1"), 
-                graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
+            robot = new Robot(Content.Load<Texture2D>("Robot_1"));
+            background = new Background(Content.Load<Texture2D>("BackGround"));
+            box = new Box(Content.Load<Texture2D>("Box"));
+            boxPlace = new BoxPlace(Content.Load<Texture2D>("Place_for_box"));
         }
 
         /// <summary>
@@ -54,7 +69,7 @@ namespace Sokoban
         /// </summary>
         protected override void UnloadContent()
         {
-            // TODO: Unload any non ContentManager content here
+            Content.Unload();
         }
 
         /// <summary>
@@ -68,7 +83,6 @@ namespace Sokoban
                 Exit();
 
             robot.Move(gameTime);
-            robot.checkDirection(scale, graphics);
 
             base.Update(gameTime);
         }
@@ -81,20 +95,7 @@ namespace Sokoban
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();
-            spriteBatch.Draw(
-                robot.Texture,
-                robot.Position(),
-                null,
-                Color.White,
-                0f,
-                new Vector2(robot.Texture.Width / 2, robot.Texture.Height / 2),
-                new Vector2(scale, scale),
-                SpriteEffects.None,
-                0f
-            );
-
-            spriteBatch.End();
+            drawController.DrawScene(spriteBatch, background, robot, box, boxPlace);
 
             base.Draw(gameTime);
         }

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PipelineBuildEvent xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-  <SourceFile>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/Images/Robot_Dark_1.png</SourceFile>
-  <SourceTime>2014-10-04T06:00:22+07:00</SourceTime>
-  <DestFile>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/bin/DesktopGL/Content/Images/Robot_1.xnb</DestFile>
-  <DestTime>2018-12-17T14:20:26.146524+07:00</DestTime>
+  <SourceFile>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/Images/Block_Box_Place.png</SourceFile>
+  <SourceTime>2018-12-18T13:24:50+07:00</SourceTime>
+  <DestFile>/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/Content/bin/Images/Block_Box_Place.xnb</DestFile>
+  <DestTime>2018-12-18T13:35:33.122466+07:00</DestTime>
   <Importer>TextureImporter</Importer>
   <ImporterTime>2018-09-24T04:56:40+07:00</ImporterTime>
   <Processor>TextureProcessor</Processor>

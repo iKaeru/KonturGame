@@ -16,12 +16,21 @@
       <e p="packages" t="ExcludeRecursive" />
       <e p="Sokoban" t="IncludeRecursive">
         <e p="app.manifest" t="Include" />
+        <e p="Background.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Box.cs" t="Include" />
+        <e p="BoxPlace.cs" t="Include" />
         <e p="Content" t="Include">
           <e p="Content.mgcb" t="Include" />
+          <e p="Levels" t="Include">
+            <e p="Level_1.txt" t="Include" />
+          </e>
         </e>
+        <e p="DrawController.cs" t="Include" />
         <e p="Icon.bmp" t="Include" />
         <e p="Icon.ico" t="Include" />
+        <e p="IDynamic.cs" t="Include" />
+        <e p="IGameElement.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
