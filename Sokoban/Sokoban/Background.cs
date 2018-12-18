@@ -6,20 +6,16 @@ namespace Sokoban
     public class Background : IGameElement
     {
         public Texture2D Texture { get; }
-        private int windowWidth;
-        private int windowHeight;
 
-        public Background(Texture2D texture, int windowWidth, int windowHeight)
+        public Background(Texture2D texture)
         {
             Texture = texture;
-            this.windowWidth = windowWidth;
-            this.windowHeight = windowHeight;
         }
-        
+
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(Texture, 
-                new Rectangle(0, 0, windowWidth, windowHeight), 
+            spriteBatch.Draw(Texture,
+                new Rectangle(0, 0, Constants.WindowWidth, Constants.WindowHeight),
                 Color.White);
         }
     }

@@ -5,6 +5,14 @@ using Microsoft.Xna.Framework.Input;
 
 namespace Sokoban
 {
+    public static class Constants
+    {
+        public const int FieldCellWidth = 104;
+        public const int FieldCellHeight = 104;
+        public const int WindowWidth = FieldCellWidth*10;
+        public const int WindowHeight = FieldCellHeight*6;
+    }
+    
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
@@ -13,11 +21,8 @@ namespace Sokoban
         private Robot robot;
         private Background background;
         private DrawController drawController;
-        private Box box; // todo
+        private Box box;
         private BoxPlace boxPlace;
-
-        private int cellWidth { get; }
-        private int cellHeight { get; }
 
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
@@ -26,8 +31,6 @@ namespace Sokoban
         {
             graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
-            cellWidth = 104;
-            cellHeight = 104;
         }
 
         /// <summary>
@@ -38,8 +41,8 @@ namespace Sokoban
         /// </summary>
         protected override void Initialize()
         {
-            graphics.PreferredBackBufferWidth = cellWidth*10;
-            graphics.PreferredBackBufferHeight = cellHeight*6;
+            graphics.PreferredBackBufferWidth = Constants.WindowWidth;
+            graphics.PreferredBackBufferHeight = Constants.WindowHeight;
             graphics.ApplyChanges();
             drawController = new DrawController();
             base.Initialize();
@@ -54,10 +57,8 @@ namespace Sokoban
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            robot = new Robot(Content.Load<Texture2D>("Robot_1"),
-                graphics.PreferredBackBufferWidth / 2, graphics.PreferredBackBufferHeight / 2);
-            background = new Background(Content.Load<Texture2D>("BackGround"),
-                graphics.PreferredBackBufferWidth, graphics.PreferredBackBufferHeight);
+            robot = new Robot(Content.Load<Texture2D>("Robot_1"));
+            background = new Background(Content.Load<Texture2D>("BackGround"));
             box = new Box(Content.Load<Texture2D>("Box"));
             boxPlace = new BoxPlace(Content.Load<Texture2D>("Place_for_box"));
         }
@@ -82,7 +83,7 @@ namespace Sokoban
                 Exit();
 
             robot.Move(gameTime);
-            robot.checkDirection(graphics);
+            robot.checkDirection();
 
             base.Update(gameTime);
         }

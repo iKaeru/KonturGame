@@ -1,4 +1,3 @@
-using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace Sokoban
@@ -9,6 +8,7 @@ namespace Sokoban
             Box box, BoxPlace boxPlace)
         {
             spriteBatch.Begin();
+            
             background.Draw(spriteBatch);
             robot.Draw(spriteBatch);
             boxPlace.Draw(spriteBatch);

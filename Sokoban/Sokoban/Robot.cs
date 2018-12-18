@@ -11,10 +11,11 @@ namespace Sokoban
         private Vector2 position;
         public float Speed { get; }
 
-        public Robot(Texture2D texture, float positionX, float positionY)
+        public Robot(Texture2D texture)
         {
             Texture = texture;
-            position = new Vector2(positionX, positionY);
+            position = new Vector2(Constants.WindowWidth / 2 - Constants.FieldCellWidth / 2,
+                Constants.WindowHeight / 2 - Constants.FieldCellHeight / 2); // todo: add coordinates
             Speed = 500f;
         }
 
@@ -40,18 +41,19 @@ namespace Sokoban
                 position.X += Speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
         }
 
-        public void checkDirection(GraphicsDeviceManager graphics)
+        public void checkDirection() // todo: maybe place in another class
         {
             position.X = Math.Min(Math.Max(0, position.X),
-                graphics.PreferredBackBufferWidth - 104);
+                Constants.WindowWidth - Constants.FieldCellWidth);
             position.Y = Math.Min(Math.Max(0, position.Y),
-                graphics.PreferredBackBufferHeight - 104);
+                Constants.WindowHeight - Constants.FieldCellHeight);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Texture,
-                new Rectangle((int) Position().X, (int) Position().Y, 104, 104),
+                new Rectangle((int) Position().X, (int) Position().Y,
+                    Constants.FieldCellWidth, Constants.FieldCellHeight),
                 Color.White);
         }
     }

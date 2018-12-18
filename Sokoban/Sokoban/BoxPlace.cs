@@ -15,7 +15,7 @@ namespace Sokoban
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Texture,
-                new Rectangle(0, 0, 104, 104),
+                new Rectangle(0, 0, Constants.FieldCellWidth, Constants.FieldCellHeight), // todo: add coordinates
                 Color.White);
         }
     }
