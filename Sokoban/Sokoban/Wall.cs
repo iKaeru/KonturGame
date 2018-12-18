@@ -3,11 +3,11 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sokoban
 {
-    public class Background : IGameElement
+    public class Wall : IGameElement
     {
         public Texture2D Texture { get; }
-
-        public Background(Texture2D texture)
+        
+        public Wall(Texture2D texture)
         {
             Texture = texture;
         }
@@ -15,7 +15,7 @@ namespace Sokoban
         public void Draw(SpriteBatch spriteBatch, int x, int y)
         {
             spriteBatch.Draw(Texture,
-                new Rectangle(x, y, Constants.WindowWidth, Constants.WindowHeight),
+                new Rectangle(x, y, Constants.FieldCellWidth, Constants.FieldCellHeight),
                 Color.White);
         }
     }

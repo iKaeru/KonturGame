@@ -1,5 +1,4 @@
-﻿using System;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -9,21 +8,24 @@ namespace Sokoban
     {
         public const int FieldCellWidth = 104;
         public const int FieldCellHeight = 104;
-        public const int WindowWidth = FieldCellWidth*10;
-        public const int WindowHeight = FieldCellHeight*6;
+        public const int WindowWidth = FieldCellWidth * 10;
+        public const int WindowHeight = FieldCellHeight * 6;
+
+        public static Texture2D RobotTexture;
+        public static Texture2D BoxTexture;
+        public static Texture2D BoxPlaceTexture;
+        public static Texture2D WallTexture;
+        public static Texture2D BackGround;
+        public static Background background;
     }
-    
+
     /// <summary>
     /// This is the main type for your game.
     /// </summary>
     public class SokobanGame : Game
     {
-        private Robot robot;
-        private Background background;
         private DrawController drawController;
-        private Box box;
-        private BoxPlace boxPlace;
-
+        
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
@@ -57,10 +59,12 @@ namespace Sokoban
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            robot = new Robot(Content.Load<Texture2D>("Robot_1"));
-            background = new Background(Content.Load<Texture2D>("BackGround"));
-            box = new Box(Content.Load<Texture2D>("Box"));
-            boxPlace = new BoxPlace(Content.Load<Texture2D>("Place_for_box"));
+            Constants.RobotTexture = Content.Load<Texture2D>("Robot_1");
+            Constants.BoxTexture = Content.Load<Texture2D>("Box");
+            Constants.BoxPlaceTexture = Content.Load<Texture2D>("Place_for_box");
+            Constants.WallTexture = Content.Load<Texture2D>("Wall");   
+            Constants.BackGround = Content.Load<Texture2D>("BackGround");
+            Constants.background = new Background(Constants.BackGround);
         }
 
         /// <summary>
@@ -82,7 +86,7 @@ namespace Sokoban
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-            robot.Move(gameTime);
+//            robot.Move(gameTime);
 
             base.Update(gameTime);
         }
@@ -95,7 +99,7 @@ namespace Sokoban
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            drawController.DrawScene(spriteBatch, background, robot, box, boxPlace);
+            drawController.DrawScene(spriteBatch);
 
             base.Draw(gameTime);
         }

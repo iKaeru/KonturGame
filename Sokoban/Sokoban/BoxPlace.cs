@@ -12,10 +12,10 @@ namespace Sokoban
             Texture = texture;
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, int x, int y)
         {
             spriteBatch.Draw(Texture,
-                new Rectangle(0, 0, Constants.FieldCellWidth, Constants.FieldCellHeight), // todo: add coordinates
+                new Rectangle(x, y, Constants.FieldCellWidth, Constants.FieldCellHeight),
                 Color.White);
         }
     }

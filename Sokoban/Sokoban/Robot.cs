@@ -9,7 +9,6 @@ namespace Sokoban
     {
         public Texture2D Texture { get; }
         private Vector2 position;
-        public float Speed { get; }
         KeyboardState previousKeyState;
 
         public Robot(Texture2D texture)
@@ -17,7 +16,6 @@ namespace Sokoban
             Texture = texture;
             position = new Vector2(Constants.WindowWidth - Constants.FieldCellWidth,
                 Constants.WindowHeight - Constants.FieldCellHeight); // todo: add coordinates
-            Speed = 500f;
         }
 
         public Vector2 Position()
@@ -53,10 +51,11 @@ namespace Sokoban
                 Constants.WindowHeight - Constants.FieldCellHeight);
         }
 
-        public void Draw(SpriteBatch spriteBatch)
+        public void Draw(SpriteBatch spriteBatch, int x, int y)
         {
             spriteBatch.Draw(Texture,
-                new Rectangle((int) Position().X, (int) Position().Y,
+                new Rectangle(x, y,
+//                new Rectangle((int) Position().X, (int) Position().Y, // todo: x, y
                     Constants.FieldCellWidth, Constants.FieldCellHeight),
                 Color.White);
         }
