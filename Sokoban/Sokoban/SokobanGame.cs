@@ -83,7 +83,6 @@ namespace Sokoban
                 Exit();
 
             robot.Move(gameTime);
-            robot.checkDirection();
 
             base.Update(gameTime);
         }

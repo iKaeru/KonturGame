@@ -10,12 +10,13 @@ namespace Sokoban
         public Texture2D Texture { get; }
         private Vector2 position;
         public float Speed { get; }
+        KeyboardState previousKeyState;
 
         public Robot(Texture2D texture)
         {
             Texture = texture;
-            position = new Vector2(Constants.WindowWidth / 2 - Constants.FieldCellWidth / 2,
-                Constants.WindowHeight / 2 - Constants.FieldCellHeight / 2); // todo: add coordinates
+            position = new Vector2(Constants.WindowWidth - Constants.FieldCellWidth,
+                Constants.WindowHeight - Constants.FieldCellHeight); // todo: add coordinates
             Speed = 500f;
         }
 
@@ -27,21 +28,24 @@ namespace Sokoban
         public void Move(GameTime gameTime)
         {
             var kstate = Keyboard.GetState();
+            
+            if (kstate.IsKeyDown(Keys.Up) && previousKeyState != kstate)
+                position.Y -= Constants.FieldCellHeight;
 
-            if (kstate.IsKeyDown(Keys.Up))
-                position.Y -= Speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
+            if (kstate.IsKeyDown(Keys.Down) && previousKeyState != kstate)
+                position.Y += Constants.FieldCellHeight;
 
-            if (kstate.IsKeyDown(Keys.Down))
-                position.Y += Speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
+            if (kstate.IsKeyDown(Keys.Left) && previousKeyState != kstate)
+                position.X -= Constants.FieldCellWidth;
 
-            if (kstate.IsKeyDown(Keys.Left))
-                position.X -= Speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
-
-            if (kstate.IsKeyDown(Keys.Right))
-                position.X += Speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
+            if (kstate.IsKeyDown(Keys.Right) && previousKeyState != kstate)
+                position.X += Constants.FieldCellWidth;
+            
+            previousKeyState = Keyboard.GetState();
+            CheckDirection();
         }
 
-        public void checkDirection() // todo: maybe place in another class
+        public void CheckDirection() // todo: maybe place in another class
         {
             position.X = Math.Min(Math.Max(0, position.X),
                 Constants.WindowWidth - Constants.FieldCellWidth);
