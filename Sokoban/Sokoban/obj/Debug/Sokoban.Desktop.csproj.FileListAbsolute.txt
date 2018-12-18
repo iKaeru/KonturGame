@@ -44,3 +44,5 @@
 /Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Misc_WoodPlate_Dark.xnb
 /Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Box.xnb
 /Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Wall.xnb
+/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Block_Box_Place.xnb
+/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/bin/DesktopGL/AnyCPU/Debug/Content/Images/Place_for_Box.xnb

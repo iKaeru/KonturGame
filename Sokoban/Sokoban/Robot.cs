@@ -9,7 +9,6 @@ namespace Sokoban
     {
         public Texture2D Texture { get; }
         private Vector2 position;
-        private float scale;
         public float Speed { get; }
 
         public Robot(Texture2D texture, float positionX, float positionY)
@@ -17,7 +16,6 @@ namespace Sokoban
             Texture = texture;
             position = new Vector2(positionX, positionY);
             Speed = 500f;
-            scale = 0.5f;
         }
 
         public Vector2 Position()
@@ -28,7 +26,6 @@ namespace Sokoban
         public void Move(GameTime gameTime)
         {
             var kstate = Keyboard.GetState();
-
 
             if (kstate.IsKeyDown(Keys.Up))
                 position.Y -= Speed * (float) gameTime.ElapsedGameTime.TotalSeconds;
@@ -45,26 +42,17 @@ namespace Sokoban
 
         public void checkDirection(GraphicsDeviceManager graphics)
         {
-            position.X = Math.Min(Math.Max(Texture.Width / 2 * scale, position.X),
-                graphics.PreferredBackBufferWidth - Texture.Width / 2 * scale);
-            position.Y = Math.Min(Math.Max(Texture.Height / 2 * scale, position.Y),
-                graphics.PreferredBackBufferHeight - Texture.Height / 2 * scale);
+            position.X = Math.Min(Math.Max(0, position.X),
+                graphics.PreferredBackBufferWidth - 104);
+            position.Y = Math.Min(Math.Max(0, position.Y),
+                graphics.PreferredBackBufferHeight - 104);
         }
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(
-                Texture,
-                Position(),
-                null,
-                Color.White,
-                0f,
-                new Vector2(Texture.Width / 2, Texture.Height / 2),
-                new Vector2(scale, scale),
-//                SpriteEffects.FlipHorizontally|SpriteEffects.FlipVertically,
-                SpriteEffects.None,
-                0f
-            );
+            spriteBatch.Draw(Texture,
+                new Rectangle((int) Position().X, (int) Position().Y, 104, 104),
+                Color.White);
         }
     }
 }

@@ -18,8 +18,13 @@
         <e p="app.manifest" t="Include" />
         <e p="Background.cs" t="Include" />
         <e p="bin" t="ExcludeRecursive" />
+        <e p="Box.cs" t="Include" />
+        <e p="BoxPlace.cs" t="Include" />
         <e p="Content" t="Include">
           <e p="Content.mgcb" t="Include" />
+          <e p="Levels" t="Include">
+            <e p="Level_1.txt" t="Include" />
+          </e>
         </e>
         <e p="DrawController.cs" t="Include" />
         <e p="Icon.bmp" t="Include" />
