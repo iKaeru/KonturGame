@@ -5,14 +5,16 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Sokoban
 {
     public class DrawController
-    {        
-        public IGameElement[,] CreateMap(string path)
+    {
+        public IGameElement[,] Map;
+        
+        public void CreateMap(string path)
         {
             var result = new IGameElement
             [Constants.WindowHeight / Constants.FieldCellHeight,
                 Constants.WindowWidth / Constants.FieldCellWidth];
 
-            string projectPath = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", ".." , path);
+            string projectPath = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "..", path);
             using (StreamReader sr = new StreamReader(projectPath))
             {
                 string line;
@@ -30,7 +32,7 @@ namespace Sokoban
                 }
             }
 
-            return result;
+            Map = result;
         }
 
         private void CreateElementBySymbol(IGameElement[,] array, char symbol, int row, int column)
@@ -38,16 +40,20 @@ namespace Sokoban
             switch (symbol)
             {
                 case '*':
-                    array[row, column] = new Robot(Constants.RobotTexture);
+                    array[row, column] = new Robot(Constants.RobotTexture,
+                        column * Constants.FieldCellWidth, row * Constants.FieldCellHeight);
                     break;
                 case '|':
-                    array[row, column] = new Wall(Constants.WallTexture);
+                    array[row, column] = new Wall(Constants.WallTexture,
+                        column * Constants.FieldCellWidth, row * Constants.FieldCellHeight);
                     break;
                 case '#':
-                    array[row, column] = new Box(Constants.BoxTexture);
+                    array[row, column] = new Box(Constants.BoxTexture,
+                        column * Constants.FieldCellWidth, row * Constants.FieldCellHeight);
                     break;
                 case 'X':
-                    array[row, column] = new BoxPlace(Constants.BoxPlaceTexture);
+                    array[row, column] = new BoxPlace(Constants.BoxPlaceTexture,
+                        column * Constants.FieldCellWidth, row * Constants.FieldCellHeight);
                     break;
                 case ' ':
                     break;
@@ -60,19 +66,17 @@ namespace Sokoban
         {
             spriteBatch.Begin();
 
-            Constants.background.Draw(spriteBatch, 0, 0);
-            
-            string[] path = {"Content", "Levels", "Level_1.txt"};
-            var elements = CreateMap(Path.Combine(path));
-            
+            Constants.background.Draw(spriteBatch);
+
+            var elements = Map;
+
             for (var i = 0; i < elements.GetLength(1); i++)
             {
                 for (var j = 0; j < elements.GetLength(0); j++)
                 {
                     if (elements[j, i] != null)
                     {
-                        elements[j, i].Draw(spriteBatch, i * Constants.FieldCellWidth,
-                            j * Constants.FieldCellHeight);
+                        elements[j, i].Draw(spriteBatch);
                     }
                 }
             }

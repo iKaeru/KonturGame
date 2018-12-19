@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using System;
+using System.IO;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 
@@ -25,9 +27,8 @@ namespace Sokoban
     public class SokobanGame : Game
     {
         private DrawController drawController;
-        
-        GraphicsDeviceManager graphics;
-        SpriteBatch spriteBatch;
+        private GraphicsDeviceManager graphics;
+        private SpriteBatch spriteBatch;
 
         public SokobanGame()
         {
@@ -48,6 +49,9 @@ namespace Sokoban
             graphics.ApplyChanges();
             drawController = new DrawController();
             base.Initialize();
+            
+            string[] path = {"Content", "Levels", "Level_1.txt"};
+            drawController.CreateMap(Path.Combine(path));
         }
 
         /// <summary>
@@ -62,9 +66,9 @@ namespace Sokoban
             Constants.RobotTexture = Content.Load<Texture2D>("Robot_1");
             Constants.BoxTexture = Content.Load<Texture2D>("Box");
             Constants.BoxPlaceTexture = Content.Load<Texture2D>("Place_for_box");
-            Constants.WallTexture = Content.Load<Texture2D>("Wall");   
+            Constants.WallTexture = Content.Load<Texture2D>("Wall");
             Constants.BackGround = Content.Load<Texture2D>("BackGround");
-            Constants.background = new Background(Constants.BackGround);
+            Constants.background = new Background(Constants.BackGround, 0, 0);
         }
 
         /// <summary>
@@ -86,7 +90,14 @@ namespace Sokoban
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
-//            robot.Move(gameTime);
+            if (drawController.Map != null)
+            {
+                foreach (var gameElement in drawController.Map)
+                {
+                    var dynamic = gameElement as IDynamic;
+                    dynamic?.Move(gameTime);
+                }
+            }
 
             base.Update(gameTime);
         }
