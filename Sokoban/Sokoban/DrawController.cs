@@ -5,19 +5,14 @@ using Microsoft.Xna.Framework.Graphics;
 namespace Sokoban
 {
     public class DrawController
-    {
-//        private IGameElement[,] map;
-        
+    {        
         public IGameElement[,] CreateMap(string path)
         {
             var result = new IGameElement
             [Constants.WindowHeight / Constants.FieldCellHeight,
                 Constants.WindowWidth / Constants.FieldCellWidth];
 
-//            Console.WriteLine(Directory.GetCurrentDirectory());
-//            Console.WriteLine(Environment.CurrentDirectory);
-//            string projectPath = Path.Combine(Environment.CurrentDirectory, path);
-            string projectPath = Path.Combine("/Users/kaeru/GitHub/Sokoban/Sokoban/Sokoban/", path);
+            string projectPath = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", ".." , path);
             using (StreamReader sr = new StreamReader(projectPath))
             {
                 string line;
