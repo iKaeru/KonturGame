@@ -3,12 +3,12 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace Sokoban
 {
-    public class BoxPlace : IGameElement
+    public class Wall : IGameElement
     {
         public Texture2D Texture { get; }
         private Vector2 position;
 
-        public BoxPlace(Texture2D texture, int x, int y)
+        public Wall(Texture2D texture, int x, int y)
         {
             Texture = texture;
             position = new Vector2(x, y);

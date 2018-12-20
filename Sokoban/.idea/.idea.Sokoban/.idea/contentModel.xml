@@ -39,6 +39,7 @@
         <e p="Robot.cs" t="Include" />
         <e p="Sokoban.Desktop.csproj" t="IncludeRecursive" />
         <e p="SokobanGame.cs" t="Include" />
+        <e p="Wall.cs" t="Include" />
         <e p="x64" t="Include" />
         <e p="x86" t="Include" />
       </e>

@@ -9,15 +9,12 @@ namespace Sokoban
     {
         public Texture2D Texture { get; }
         private Vector2 position;
-        public float Speed { get; }
         KeyboardState previousKeyState;
 
-        public Robot(Texture2D texture)
+        public Robot(Texture2D texture, int x, int y)
         {
             Texture = texture;
-            position = new Vector2(Constants.WindowWidth - Constants.FieldCellWidth,
-                Constants.WindowHeight - Constants.FieldCellHeight); // todo: add coordinates
-            Speed = 500f;
+            position = new Vector2(x, y);
         }
 
         public Vector2 Position()
@@ -45,7 +42,7 @@ namespace Sokoban
             CheckDirection();
         }
 
-        public void CheckDirection() // todo: maybe place in another class
+        public void CheckDirection()
         {
             position.X = Math.Min(Math.Max(0, position.X),
                 Constants.WindowWidth - Constants.FieldCellWidth);
