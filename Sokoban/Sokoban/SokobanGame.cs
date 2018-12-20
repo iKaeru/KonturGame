@@ -29,6 +29,7 @@ namespace Sokoban
         private DrawController drawController;
         private GraphicsDeviceManager graphics;
         private SpriteBatch spriteBatch;
+        private KeyboardState previousKeyState;
 
         public SokobanGame()
         {
@@ -49,7 +50,7 @@ namespace Sokoban
             graphics.ApplyChanges();
             drawController = new DrawController();
             base.Initialize();
-            
+
             string[] path = {"Content", "Levels", "Level_1.txt"};
             drawController.CreateMap(Path.Combine(path));
         }
@@ -90,12 +91,37 @@ namespace Sokoban
             if (Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            if (Keyboard.GetState().IsKeyDown(Keys.R))
+            {
+                string[] path = {"Content", "Levels", "Level_1.txt"};
+                drawController.CreateMap(Path.Combine(path));
+            }
+
+            Vector2 position = Vector2.Zero;
+
+            var kstate = Keyboard.GetState();
+
+            if (kstate.IsKeyDown(Keys.Up) && previousKeyState != kstate)
+                position.Y -= Constants.FieldCellHeight;
+
+            if (kstate.IsKeyDown(Keys.Down) && previousKeyState != kstate)
+                position.Y += Constants.FieldCellHeight;
+
+            if (kstate.IsKeyDown(Keys.Left) && previousKeyState != kstate)
+                position.X -= Constants.FieldCellWidth;
+
+            if (kstate.IsKeyDown(Keys.Right) && previousKeyState != kstate)
+                position.X += Constants.FieldCellWidth;
+
+            previousKeyState = Keyboard.GetState();
+
             if (drawController.Map != null)
             {
                 foreach (var gameElement in drawController.Map)
                 {
-                    var dynamic = gameElement as IDynamic;
-                    dynamic?.Move(gameTime);
+                    var player = gameElement as IDynamic;
+                    if ((player as IGameElement)?.Texture == Constants.RobotTexture)
+                        player?.Move(position, drawController);
                 }
             }
 

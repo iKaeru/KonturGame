@@ -7,5 +7,6 @@ namespace Sokoban
     {
         Texture2D Texture { get; }
         void Draw(SpriteBatch spriteBatch);
+        Vector2 Position();
     }
 }
