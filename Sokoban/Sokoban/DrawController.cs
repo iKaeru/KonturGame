@@ -7,7 +7,7 @@ namespace Sokoban
     public class DrawController
     {
         public IGameElement[,] Map;
-        
+
         public void CreateMap(string path)
         {
             var result = new IGameElement
@@ -68,15 +68,13 @@ namespace Sokoban
 
             Constants.background.Draw(spriteBatch);
 
-            var elements = Map;
-
-            for (var i = 0; i < elements.GetLength(1); i++)
+            for (var i = 0; i < Map.GetLength(1); i++)
             {
-                for (var j = 0; j < elements.GetLength(0); j++)
+                for (var j = 0; j < Map.GetLength(0); j++)
                 {
-                    if (elements[j, i] != null)
+                    if (Map[j, i] != null)
                     {
-                        elements[j, i].Draw(spriteBatch);
+                        Map[j, i].Draw(spriteBatch);
                     }
                 }
             }

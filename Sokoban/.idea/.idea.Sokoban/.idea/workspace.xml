@@ -7,6 +7,7 @@
       <change beforePath="$PROJECT_DIR$/Sokoban/Box.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sokoban/Box.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sokoban/BoxPlace.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sokoban/BoxPlace.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sokoban/DrawController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sokoban/DrawController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Sokoban/IDynamic.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sokoban/IDynamic.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sokoban/IGameElement.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sokoban/IGameElement.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sokoban/Robot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sokoban/Robot.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Sokoban/SokobanGame.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Sokoban/SokobanGame.cs" afterDir="false" />
@@ -32,27 +33,27 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="cs" value="42" />
+          <entry key="cs" value="54" />
           <entry key="mgcb" value="13" />
           <entry key="txt" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="C#" value="42" />
+          <entry key="C#" value="54" />
           <entry key="PLAIN_TEXT" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="cs" value="4377" />
+          <entry key="cs" value="5522" />
           <entry key="mgcb" value="1" />
           <entry key="txt" value="144" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="C#" value="4377" />
+          <entry key="C#" value="5522" />
           <entry key="PLAIN_TEXT" value="145" />
         </counts>
       </usages-collector>
@@ -69,29 +70,52 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Sokoban/SokobanGame.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="271">
-              <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+            <state relative-caret-position="252">
+              <caret line="140" column="32" selection-start-line="140" selection-start-column="32" selection-end-line="140" selection-end-column="32" />
               <folding>
-                <marker date="1545246772521" expanded="true" signature="6:121" ph="..." />
-                <marker date="1545246772521" expanded="true" signature="140:3978" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="176:678" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="684:761" ph="/// This is the main type for your game. ... " />
-                <marker date="1545246772521" expanded="true" signature="797:3976" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="969:1092" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="1102:1455" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
-                <marker date="1545246772521" expanded="true" signature="1500:1783" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="1793:1940" ph="/// LoadContent will be called once per game and is the place to load ... " />
-                <marker date="1545246772521" expanded="true" signature="1986:2587" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="2597:2750" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
-                <marker date="1545246772521" expanded="true" signature="2798:2848" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="2858:3117" ph="/// Allows the game to run logic such as updating the world, ... " />
-                <marker date="1545246772521" expanded="true" signature="3175:3564" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="3378:3518" ph="{...}" />
-                <marker date="1545246772521" expanded="true" signature="3574:3752" ph="/// This is called when the game should draw itself. ... " />
-                <marker date="1545246772521" expanded="true" signature="3808:3970" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="6:138" ph="..." />
+                <marker date="1545295815026" expanded="true" signature="157:5190" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="193:695" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="701:778" ph="/// This is the main type for your game. ... " />
+                <marker date="1545295815026" expanded="true" signature="814:5188" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="1034:1157" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="1167:1520" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
+                <marker date="1545295815026" expanded="true" signature="1565:1973" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="1983:2130" ph="/// LoadContent will be called once per game and is the place to load ... " />
+                <marker date="1545295815026" expanded="true" signature="2176:2777" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="2787:2940" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
+                <marker date="1545295815026" expanded="true" signature="2988:3038" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="3048:3307" ph="/// Allows the game to run logic such as updating the world, ... " />
+                <marker date="1545295815026" expanded="true" signature="3365:4776" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="3515:3675" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="4395:4730" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="4473:4716" ph="{...}" />
+                <marker date="1545295815026" expanded="true" signature="4786:4964" ph="/// This is called when the game should draw itself. ... " />
+                <marker date="1545295815026" expanded="true" signature="5020:5182" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sokoban/Box.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="222">
+              <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+              <folding>
+                <marker date="1545296942750" expanded="true" signature="6:70" ph="..." />
+                <marker date="1545296942750" expanded="true" signature="89:1692" ph="{...}" />
+                <marker date="1545296942750" expanded="true" signature="137:1690" ph="{...}" />
+                <marker date="1545296942750" expanded="true" signature="305:398" ph="{...}" />
+                <marker date="1545296942750" expanded="true" signature="433:482" ph="{...}" />
+                <marker date="1545296942750" expanded="true" signature="533:865" ph="{...}" />
+                <marker date="1545296942750" expanded="true" signature="940:1061" ph="{...}" />
+                <marker date="1545296942750" expanded="true" signature="1146:1684" ph="{...}" />
+                <marker date="1545296942750" expanded="true" signature="1216:1648" ph="{...}" />
+                <marker date="1545296942750" expanded="true" signature="1325:1634" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -100,41 +124,20 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sokoban/Robot.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
+            <state relative-caret-position="153">
+              <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
               <folding>
-                <marker date="1545246772531" expanded="false" signature="6:121" ph="..." />
-                <marker date="1545246772531" expanded="true" signature="140:1894" ph="{...}" />
-                <marker date="1545246772531" expanded="true" signature="190:1892" ph="{...}" />
-                <marker date="1545246772531" expanded="true" signature="367:460" ph="{...}" />
-                <marker date="1545246772531" expanded="true" signature="495:544" ph="{...}" />
-                <marker date="1545246772531" expanded="true" signature="589:1291" ph="{...}" />
-                <marker date="1545246772531" expanded="true" signature="1329:1603" ph="{...}" />
-                <marker date="1545246772531" expanded="true" signature="1654:1886" ph="{...}" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Sokoban/DrawController.cs">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="184">
-              <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
-              <folding>
-                <marker date="1545246772518" expanded="true" signature="6:70" ph="..." />
-                <marker date="1545246772518" expanded="true" signature="89:2937" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="123:2935" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="217:1058" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="577:1021" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="704:1007" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="807:961" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="1159:2254" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="1197:2244" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="2310:2929" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="2609:2887" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="2687:2873" ph="{...}" />
-                <marker date="1545246772518" expanded="true" signature="2753:2855" ph="{...}" />
+                <marker date="1545296198982" expanded="false" signature="6:121" ph="..." />
+                <marker date="1545296198982" expanded="true" signature="140:2014" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="190:2012" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="327:420" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="455:504" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="579:1411" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="649:1331" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="758:1317" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="947:1299" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="1449:1723" ph="{...}" />
+                <marker date="1545296198982" expanded="true" signature="1774:2006" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -143,14 +146,39 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/Sokoban/Wall.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="105">
+              <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
               <folding>
-                <marker date="1545246772526" expanded="false" signature="6:70" ph="..." />
-                <marker date="1545246772526" expanded="true" signature="89:644" ph="{...}" />
-                <marker date="1545246772526" expanded="true" signature="128:642" ph="{...}" />
-                <marker date="1545246772526" expanded="true" signature="264:357" ph="{...}" />
-                <marker date="1545246772526" expanded="true" signature="408:636" ph="{...}" />
+                <marker date="1545247838265" expanded="false" signature="6:70" ph="..." />
+                <marker date="1545247838265" expanded="true" signature="89:736" ph="{...}" />
+                <marker date="1545247838265" expanded="true" signature="128:734" ph="{...}" />
+                <marker date="1545247838265" expanded="true" signature="264:357" ph="{...}" />
+                <marker date="1545247838265" expanded="true" signature="400:449" ph="{...}" />
+                <marker date="1545247838265" expanded="true" signature="500:728" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Sokoban/DrawController.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
+              <folding>
+                <marker date="1545247244910" expanded="true" signature="6:70" ph="..." />
+                <marker date="1545247244910" expanded="true" signature="89:2767" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="123:2765" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="209:1050" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="569:1013" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="696:999" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="799:953" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="1151:2246" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="1189:2236" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="2302:2759" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="2454:2717" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="2527:2703" ph="{...}" />
+                <marker date="1545247244910" expanded="true" signature="2588:2685" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -181,15 +209,16 @@
         <option value="$PROJECT_DIR$/Sokoban/IStatic.cs" />
         <option value="$PROJECT_DIR$/Sokoban/Content/Levels/Level_1.txt" />
         <option value="$PROJECT_DIR$/Sokoban/ICellElement.cs" />
-        <option value="$PROJECT_DIR$/Sokoban/IDynamic.cs" />
-        <option value="$PROJECT_DIR$/Sokoban/SokobanGame.cs" />
-        <option value="$PROJECT_DIR$/Sokoban/IGameElement.cs" />
-        <option value="$PROJECT_DIR$/Sokoban/Robot.cs" />
-        <option value="$PROJECT_DIR$/Sokoban/Box.cs" />
-        <option value="$PROJECT_DIR$/Sokoban/BoxPlace.cs" />
+        <option value="$PROJECT_DIR$/Sokoban/DrawController.cs" />
         <option value="$PROJECT_DIR$/Sokoban/Background.cs" />
         <option value="$PROJECT_DIR$/Sokoban/Wall.cs" />
-        <option value="$PROJECT_DIR$/Sokoban/DrawController.cs" />
+        <option value="$PROJECT_DIR$/Sokoban/BoxPlace.cs" />
+        <option value="$PROJECT_DIR$/Sokoban/IGameElement.cs" />
+        <option value="$PROJECT_DIR$/Sokoban/IPlayer.cs" />
+        <option value="$PROJECT_DIR$/Sokoban/IDynamic.cs" />
+        <option value="$PROJECT_DIR$/Sokoban/Robot.cs" />
+        <option value="$PROJECT_DIR$/Sokoban/Box.cs" />
+        <option value="$PROJECT_DIR$/Sokoban/SokobanGame.cs" />
       </list>
     </option>
   </component>
@@ -293,7 +322,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1544544982660</updated>
-      <workItem from="1544544984523" duration="53364000" />
+      <workItem from="1544544984523" duration="60386000" />
     </task>
     <task id="LOCAL-00001" summary="Made a separate class for Robot and divided logic from SokobanGame.cs">
       <created>1544865015692</created>
@@ -313,7 +342,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53364000" />
+    <option name="totallyTimeSpent" value="60386000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -329,7 +358,7 @@
     <editor active="true" />
     <layout>
       <window_info id="Favorites" order="0" side_tool="true" />
-      <window_info active="true" content_ui="combo" id="Project" order="1" visible="true" weight="0.25767368" />
+      <window_info content_ui="combo" id="Project" order="1" visible="true" weight="0.25767368" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
       <window_info anchor="bottom" id="Docker" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Unit Tests" order="1" weight="0.32847896" />
@@ -341,7 +370,7 @@
       <window_info anchor="bottom" id="NuGet" order="7" />
       <window_info anchor="bottom" id="Message" order="8" />
       <window_info anchor="bottom" id="Find" order="9" />
-      <window_info anchor="bottom" id="Run" order="10" visible="true" weight="0.32847896" />
+      <window_info active="true" anchor="bottom" id="Run" order="10" visible="true" weight="0.32847896" />
       <window_info anchor="bottom" id="Debug" order="11" weight="0.39967638" />
       <window_info anchor="bottom" id="Cvs" order="12" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="13" weight="0.4" />
@@ -444,146 +473,159 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Sokoban/IDynamic.cs">
+    <entry file="file://$PROJECT_DIR$/Sokoban/Background.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="23" selection-start-line="6" selection-start-column="23" selection-end-line="6" selection-end-column="23" />
+        <state relative-caret-position="270">
+          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
           <folding>
-            <marker date="1545039136385" expanded="true" signature="49:161" ph="{...}" />
-            <marker date="1545039136385" expanded="true" signature="81:159" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sokoban/SokobanGame.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="271">
-          <caret line="67" column="9" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-          <folding>
-            <marker date="1545246772521" expanded="true" signature="6:121" ph="..." />
-            <marker date="1545246772521" expanded="true" signature="140:3978" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="176:678" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="684:761" ph="/// This is the main type for your game. ... " />
-            <marker date="1545246772521" expanded="true" signature="797:3976" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="969:1092" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="1102:1455" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
-            <marker date="1545246772521" expanded="true" signature="1500:1783" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="1793:1940" ph="/// LoadContent will be called once per game and is the place to load ... " />
-            <marker date="1545246772521" expanded="true" signature="1986:2587" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="2597:2750" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
-            <marker date="1545246772521" expanded="true" signature="2798:2848" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="2858:3117" ph="/// Allows the game to run logic such as updating the world, ... " />
-            <marker date="1545246772521" expanded="true" signature="3175:3564" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="3378:3518" ph="{...}" />
-            <marker date="1545246772521" expanded="true" signature="3574:3752" ph="/// This is called when the game should draw itself. ... " />
-            <marker date="1545246772521" expanded="true" signature="3808:3970" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sokoban/IGameElement.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="5" lean-forward="true" selection-start-line="9" selection-start-column="5" selection-end-line="9" selection-end-column="5" />
-          <folding>
-            <marker date="1545246655763" expanded="false" signature="6:70" ph="..." />
-            <marker date="1545246655763" expanded="true" signature="89:218" ph="{...}" />
-            <marker date="1545246655763" expanded="true" signature="125:216" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sokoban/Box.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="147">
-          <caret line="14" column="9" lean-forward="true" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
-          <folding>
-            <marker date="1545246710954" expanded="false" signature="6:70" ph="..." />
-            <marker date="1545246710954" expanded="true" signature="89:642" ph="{...}" />
-            <marker date="1545246710954" expanded="true" signature="127:640" ph="{...}" />
-            <marker date="1545246710954" expanded="true" signature="262:355" ph="{...}" />
-            <marker date="1545246710954" expanded="true" signature="406:634" ph="{...}" />
+            <marker date="1545247833633" expanded="false" signature="6:70" ph="..." />
+            <marker date="1545247833633" expanded="true" signature="89:742" ph="{...}" />
+            <marker date="1545247833633" expanded="true" signature="134:740" ph="{...}" />
+            <marker date="1545247833633" expanded="true" signature="276:369" ph="{...}" />
+            <marker date="1545247833633" expanded="true" signature="412:461" ph="{...}" />
+            <marker date="1545247833633" expanded="true" signature="512:734" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sokoban/BoxPlace.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        <state relative-caret-position="102">
+          <caret line="16" column="8" selection-start-line="16" selection-start-column="8" selection-end-line="16" selection-end-column="8" />
           <folding>
-            <marker date="1545246732084" expanded="false" signature="6:70" ph="..." />
-            <marker date="1545246732084" expanded="true" signature="89:652" ph="{...}" />
-            <marker date="1545246732084" expanded="true" signature="132:650" ph="{...}" />
-            <marker date="1545246732084" expanded="true" signature="272:365" ph="{...}" />
-            <marker date="1545246732084" expanded="true" signature="416:644" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sokoban/Robot.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="52" column="48" selection-start-line="52" selection-start-column="48" selection-end-line="52" selection-end-column="48" />
-          <folding>
-            <marker date="1545246772531" expanded="false" signature="6:121" ph="..." />
-            <marker date="1545246772531" expanded="true" signature="140:1894" ph="{...}" />
-            <marker date="1545246772531" expanded="true" signature="190:1892" ph="{...}" />
-            <marker date="1545246772531" expanded="true" signature="367:460" ph="{...}" />
-            <marker date="1545246772531" expanded="true" signature="495:544" ph="{...}" />
-            <marker date="1545246772531" expanded="true" signature="589:1291" ph="{...}" />
-            <marker date="1545246772531" expanded="true" signature="1329:1603" ph="{...}" />
-            <marker date="1545246772531" expanded="true" signature="1654:1886" ph="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Sokoban/Background.cs">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="16" column="49" lean-forward="true" selection-start-line="16" selection-start-column="49" selection-end-line="16" selection-end-column="49" />
-          <folding>
-            <marker date="1545246741649" expanded="true" signature="6:70" ph="..." />
-            <marker date="1545246741649" expanded="true" signature="89:650" ph="{...}" />
-            <marker date="1545246741649" expanded="true" signature="134:648" ph="{...}" />
-            <marker date="1545246741649" expanded="true" signature="276:369" ph="{...}" />
-            <marker date="1545246741649" expanded="true" signature="420:642" ph="{...}" />
+            <marker date="1545247852451" expanded="false" signature="6:70" ph="..." />
+            <marker date="1545247852451" expanded="true" signature="89:752" ph="{...}" />
+            <marker date="1545247852451" expanded="true" signature="132:750" ph="{...}" />
+            <marker date="1545247852451" expanded="true" signature="272:365" ph="{...}" />
+            <marker date="1545247852451" expanded="true" signature="408:457" ph="{...}" />
+            <marker date="1545247852451" expanded="true" signature="516:744" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sokoban/Wall.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="105">
+          <caret line="8" column="33" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
           <folding>
-            <marker date="1545246772526" expanded="false" signature="6:70" ph="..." />
-            <marker date="1545246772526" expanded="true" signature="89:644" ph="{...}" />
-            <marker date="1545246772526" expanded="true" signature="128:642" ph="{...}" />
-            <marker date="1545246772526" expanded="true" signature="264:357" ph="{...}" />
-            <marker date="1545246772526" expanded="true" signature="408:636" ph="{...}" />
+            <marker date="1545247838265" expanded="false" signature="6:70" ph="..." />
+            <marker date="1545247838265" expanded="true" signature="89:736" ph="{...}" />
+            <marker date="1545247838265" expanded="true" signature="128:734" ph="{...}" />
+            <marker date="1545247838265" expanded="true" signature="264:357" ph="{...}" />
+            <marker date="1545247838265" expanded="true" signature="400:449" ph="{...}" />
+            <marker date="1545247838265" expanded="true" signature="500:728" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Sokoban/DrawController.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="79" column="21" lean-forward="true" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+        <state relative-caret-position="249">
+          <caret line="76" column="43" selection-start-line="76" selection-start-column="43" selection-end-line="76" selection-end-column="43" />
           <folding>
-            <marker date="1545246772518" expanded="true" signature="6:70" ph="..." />
-            <marker date="1545246772518" expanded="true" signature="89:2937" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="123:2935" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="217:1058" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="577:1021" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="704:1007" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="807:961" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="1159:2254" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="1197:2244" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="2310:2929" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="2609:2887" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="2687:2873" ph="{...}" />
-            <marker date="1545246772518" expanded="true" signature="2753:2855" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="6:70" ph="..." />
+            <marker date="1545247244910" expanded="true" signature="89:2767" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="123:2765" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="209:1050" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="569:1013" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="696:999" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="799:953" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="1151:2246" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="1189:2236" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="2302:2759" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="2454:2717" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="2527:2703" ph="{...}" />
+            <marker date="1545247244910" expanded="true" signature="2588:2685" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sokoban/IDynamic.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="23" selection-start-line="4" selection-start-column="23" selection-end-line="4" selection-end-column="23" />
+          <folding>
+            <marker date="1545295277578" expanded="true" signature="49:163" ph="{...}" />
+            <marker date="1545295277578" expanded="true" signature="81:161" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sokoban/Robot.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="39" column="17" selection-start-line="39" selection-start-column="17" selection-end-line="39" selection-end-column="17" />
+          <folding>
+            <marker date="1545296198982" expanded="false" signature="6:121" ph="..." />
+            <marker date="1545296198982" expanded="true" signature="140:2014" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="190:2012" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="327:420" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="455:504" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="579:1411" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="649:1331" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="758:1317" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="947:1299" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="1449:1723" ph="{...}" />
+            <marker date="1545296198982" expanded="true" signature="1774:2006" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sokoban/IGameElement.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="5" column="21" selection-start-line="5" selection-start-column="21" selection-end-line="5" selection-end-column="21" />
+          <folding>
+            <marker date="1545247871966" expanded="false" signature="6:70" ph="..." />
+            <marker date="1545247871966" expanded="true" signature="89:246" ph="{...}" />
+            <marker date="1545247871966" expanded="true" signature="125:244" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sokoban/Box.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="222">
+          <caret line="51" column="13" selection-start-line="51" selection-start-column="13" selection-end-line="51" selection-end-column="13" />
+          <folding>
+            <marker date="1545296942750" expanded="true" signature="6:70" ph="..." />
+            <marker date="1545296942750" expanded="true" signature="89:1692" ph="{...}" />
+            <marker date="1545296942750" expanded="true" signature="137:1690" ph="{...}" />
+            <marker date="1545296942750" expanded="true" signature="305:398" ph="{...}" />
+            <marker date="1545296942750" expanded="true" signature="433:482" ph="{...}" />
+            <marker date="1545296942750" expanded="true" signature="533:865" ph="{...}" />
+            <marker date="1545296942750" expanded="true" signature="940:1061" ph="{...}" />
+            <marker date="1545296942750" expanded="true" signature="1146:1684" ph="{...}" />
+            <marker date="1545296942750" expanded="true" signature="1216:1648" ph="{...}" />
+            <marker date="1545296942750" expanded="true" signature="1325:1634" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Sokoban/SokobanGame.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="140" column="32" selection-start-line="140" selection-start-column="32" selection-end-line="140" selection-end-column="32" />
+          <folding>
+            <marker date="1545295815026" expanded="true" signature="6:138" ph="..." />
+            <marker date="1545295815026" expanded="true" signature="157:5190" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="193:695" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="701:778" ph="/// This is the main type for your game. ... " />
+            <marker date="1545295815026" expanded="true" signature="814:5188" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="1034:1157" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="1167:1520" ph="/// Allows the game to perform any initialization it needs to before starting to run. ... " />
+            <marker date="1545295815026" expanded="true" signature="1565:1973" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="1983:2130" ph="/// LoadContent will be called once per game and is the place to load ... " />
+            <marker date="1545295815026" expanded="true" signature="2176:2777" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="2787:2940" ph="/// UnloadContent will be called once per game and is the place to unload ... " />
+            <marker date="1545295815026" expanded="true" signature="2988:3038" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="3048:3307" ph="/// Allows the game to run logic such as updating the world, ... " />
+            <marker date="1545295815026" expanded="true" signature="3365:4776" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="3515:3675" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="4395:4730" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="4473:4716" ph="{...}" />
+            <marker date="1545295815026" expanded="true" signature="4786:4964" ph="/// This is called when the game should draw itself. ... " />
+            <marker date="1545295815026" expanded="true" signature="5020:5182" ph="{...}" />
           </folding>
         </state>
       </provider>

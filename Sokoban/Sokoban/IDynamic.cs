@@ -4,7 +4,6 @@ namespace Sokoban
 {
     public interface IDynamic
     {
-        Vector2 Position();
-        void Move(GameTime gameTime);
+        void Move(Vector2 position, DrawController drawController);
     }
 }

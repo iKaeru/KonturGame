@@ -13,7 +13,12 @@ namespace Sokoban
             Texture = texture;
             position = new Vector2(x, y);
         }
-
+        
+        public Vector2 Position()
+        {
+            return position;
+        }
+        
         public void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(Texture,

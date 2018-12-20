@@ -9,7 +9,6 @@ namespace Sokoban
     {
         public Texture2D Texture { get; }
         private Vector2 position;
-        KeyboardState previousKeyState;
 
         public Robot(Texture2D texture, int x, int y)
         {
@@ -22,23 +21,26 @@ namespace Sokoban
             return position;
         }
 
-        public void Move(GameTime gameTime)
+        public void Move(Vector2 position, DrawController drawController)
         {
-            var kstate = Keyboard.GetState();
-            
-            if (kstate.IsKeyDown(Keys.Up) && previousKeyState != kstate)
-                position.Y -= Constants.FieldCellHeight;
+            foreach (var gameElement in drawController.Map)
+            {
+                if (gameElement != null && gameElement.Position() == this.position + position)
+                {
+                    if (gameElement.Texture == Constants.WallTexture)
+                        return;
+                    if (gameElement.Texture == Constants.BoxTexture)
+                    {
+                        var box = gameElement as IDynamic;
+                        var boxPosition = (box as IGameElement).Position();
+                        box.Move(position, drawController);
+                        if ((box as IGameElement).Position() == boxPosition)
+                            return;
+                    }
+                }
+            }
 
-            if (kstate.IsKeyDown(Keys.Down) && previousKeyState != kstate)
-                position.Y += Constants.FieldCellHeight;
-
-            if (kstate.IsKeyDown(Keys.Left) && previousKeyState != kstate)
-                position.X -= Constants.FieldCellWidth;
-
-            if (kstate.IsKeyDown(Keys.Right) && previousKeyState != kstate)
-                position.X += Constants.FieldCellWidth;
-            
-            previousKeyState = Keyboard.GetState();
+            this.position += position;
             CheckDirection();
         }
 
