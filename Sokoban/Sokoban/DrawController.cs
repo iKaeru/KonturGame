@@ -14,7 +14,7 @@ namespace Sokoban
             [Constants.WindowHeight / Constants.FieldCellHeight,
                 Constants.WindowWidth / Constants.FieldCellWidth];
 
-            string projectPath = Path.Combine(Environment.CurrentDirectory, "..", "..", "..", "..", path);
+            string projectPath = Path.Combine(Environment.CurrentDirectory, path);
             using (StreamReader sr = new StreamReader(projectPath))
             {
                 string line;
